@@ -8,12 +8,14 @@ import Footer from '../components/Footer/index';
 import './Home.scss'
 import axios from 'axios';
 
-function Home() {
+function Home(props) {
 
     const [data, setData] = useState([]);
+    const [dataslide,setDataSlide]= useState([]);
 
     useEffect(() => {
         getAllCate();
+        getRandFilm();
     }, [])
 
     const getAllCate = async () => {
@@ -24,19 +26,22 @@ function Home() {
         }
     }
 
-    
-
-
-
+    const getRandFilm = async () => {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/randfilm`);
+        if (res.status === 200) {
+            console.log(res.data);
+            setDataSlide(res.data);            
+        }
+    };
 
 
     return (
         <div className='square'>
             <div className='leftHome'>&nbsp;</div>
             <div className='centerHome'>
-                <Navbar></Navbar>
-                <Search></Search>
-                <Slide numberShow={3} padding='10px'></Slide>
+                <Navbar data={data}></Navbar>
+                <Search data={data}></Search>
+                <Slide numberShow={3} padding='10px' data={dataslide}></Slide>
                 {data && data.map((item, id) => {
                     return (
                         <div  key={id}>
@@ -45,7 +50,7 @@ function Home() {
                     );
                 })}
                 <Contact></Contact>
-                <Footer></Footer>
+                <Footer data={data}></Footer>
             </div>
             <div className='rightHome'>&nbsp;</div>
         </div>

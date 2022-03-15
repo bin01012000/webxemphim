@@ -1,28 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import './Search.scss'
 
-const Search = () => {
+const Search = (props) => {
 
-    const [data, setData] = useState([]);
 
     const [kw, setKw] = useState('');
 
     const [ml, setMl] = useState('');
-
-
-
-    useEffect(() => {
-        getAllCategory();
-    }, []);
-
-    const getAllCategory = async () => {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/allcategory`);
-        if (res.status === 200) {
-            console.log(res.data);
-            setData(res.data);
-        }
-    };
 
 
     const takeMaLoai = (e) => {
@@ -47,7 +31,7 @@ const Search = () => {
                     <div className='categorySearch'>
                         <select defaultValue='0' onChange={takeMaLoai}>
                             <option> Tất cả phim </option>
-                            {data && data.map((item, id) => {
+                            {props.data && props.data.map((item, id) => {
                                 return (
                                     <option key={id} value={item.maloai}> {item.tenloai} </option>
                                 );

@@ -1,26 +1,11 @@
 import React from 'react';
 import './Footer.scss'
 import logo from '../../assets/images/movie.png'
-import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
-const Footer = () => {
+const Footer = (props) => {
 
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        getAllCategory();
-    }, []);
-
-    const getAllCategory = async () => {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/allcategory`);
-        if (res.status === 200) {
-            console.log(res.data);
-            setData(res.data);
-        }
-    };
 
     return (<>
         <div className='containerfooter'>
@@ -30,7 +15,7 @@ const Footer = () => {
             <div className='rightfooter'>&nbsp;
                 <div className='category'>
                     <ul> Danh mục
-                        {data && data.map((item, id) => {
+                        {props.data && props.data.map((item, id) => {
                             return (
                                 <li key={id}><Link to={`/viewall/${item.maloai}`} className='cateFooter'> Phim {item.tenloai} </Link></li>
                             );
