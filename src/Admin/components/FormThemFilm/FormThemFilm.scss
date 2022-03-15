@@ -1,0 +1,192 @@
+$border: 2px solid greenyellow;
+
+.containerFormThemFilm {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .formTong {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            color: greenyellow;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .form1 {
+            width: 60%;
+            float: left;
+        }
+
+        .form2 {
+            width: 40%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            textarea {
+                padding: 16px;
+                border-radius: 7px;
+                background: rgba(255, 255, 255, .2);
+                margin: 15px;
+                width: 300px;
+                font-size: 13px;
+                height: 15px;
+                border-top: none;
+                border-right: none;
+                border-bottom: $border;
+                border-left: $border;
+                color: greenyellow;
+
+                &::-webkit-input-placeholder {
+                    color: greenyellow;
+                }
+
+                &:focus {
+                    outline-color: greenyellow;
+                    background: transparent;
+                    color: greenyellow;
+                }
+            }
+
+            select {
+                padding: 10px;
+                border-radius: 7px;
+                background: rgba(255, 255, 255, .2);
+                margin: 15px;
+                width: 100%;
+                font-size: 1.2em;
+                height: 100%;
+                border-top: none;
+                border-right: none;
+                border-bottom: $border;
+                border-left: $border;
+                color: greenyellow;
+
+                &:focus {
+                    outline: none;
+                }
+
+                option {
+                    background-color: greenyellow;
+                    width: 100%;
+                    font-size: 0.8em;
+                    border: none;
+                    color: black;
+
+                }
+            }
+
+            input[type="file"] {
+                display: none;
+
+            }
+
+            .custom-file-2 {
+                display: inline-block;
+                padding: 10px 5px;
+                cursor: pointer;
+                background-color: greenyellow;
+                color: #000;
+                text-overflow: ellipsis;
+                border-radius: 50%;
+                font-family: "Times New Roman", Times, serif;
+            }
+
+            .custom-file-2 i {
+                font-size: 30px;
+            }
+
+            #filesel_2 {
+                color: greenyellow;
+                font-weight: 700;
+                padding-left: 30px;
+            }
+
+            .inputFile {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+
+            .submitStyle {
+                width: 100%;
+                padding-top: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button {
+                    background-color: transparent;
+                    padding: 60px;
+                    font-size: 1.5em;
+                    border-top: 2px solid greenyellow;
+                    border-right: 2px solid greenyellow;
+                    border-bottom: 6px solid greenyellow;
+                    border-left: 6px solid greenyellow;
+                    border-radius: 7px;
+                    color: greenyellow;
+                    cursor: pointer;
+
+                    &:hover{
+                        background: rgba(255, 255, 255, .2);
+                        font-size: 1.7em;
+                    }
+
+                    &:focus{
+                        background: transparent;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+
+        }
+
+        .styleInput {
+            padding: 16px;
+            border-radius: 7px;
+            background: rgba(255, 255, 255, .2);
+            margin: 15px;
+            width: 300px;
+            font-size: 18px;
+            height: 15px;
+            border-top: none;
+            border-right: none;
+            border-bottom: $border;
+            border-left: $border;
+            color: greenyellow;
+
+            &:focus {
+                outline-color: greenyellow;
+                background: transparent;
+                color: greenyellow;
+            }
+
+            &::-webkit-input-placeholder {
+                color: greenyellow;
+            }
+
+            &:focus::-webkit-input-placeholder {
+                color: greenyellow;
+            }
+        }
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}

@@ -1,0 +1,142 @@
+$styleBorder: 2px solid greenyellow;
+
+.containercontact {
+    width: 100%;
+    display: flex;
+    padding-left: 50px;
+    padding-top: 80px;
+
+    .leftcontact {
+        width: 60%;
+        display: block;
+
+        .namemail {
+            width: 100%;
+            display: flex;
+
+            input {
+                background: none;
+                font-size: large;
+                border: none;
+                border-bottom: $styleBorder;
+                border-left: $styleBorder;
+                color: white;
+            }
+
+
+            p {
+                font-size: 1.3em;
+                color: greenyellow;
+            }
+
+            .name {
+                width: 50%;
+
+                input {
+                    font-size: 0.9em;
+                    height: 20px;
+                    border-radius: 7px;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: greenyellow;
+                    }
+
+                    &:focus::-webkit-input-placeholder {
+                        color: greenyellow;
+                    }
+                }
+            }
+
+            .mail {
+                width: 50%;
+
+                input {
+                    font-size: 0.9em;
+                    height: 20px;
+                    border-radius: 7px;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: greenyellow;
+                    }
+
+                    &:focus::-webkit-input-placeholder {
+                        color: greenyellow;
+                    }
+                }
+            }
+        }
+
+        .content {
+            width: 100%;
+            font-size: 1.3em;
+            color: greenyellow;
+            padding-top: 20px;
+
+            textarea {
+                background: none;
+                width: 85%;
+                height: 80px;
+                border: none;
+                border-bottom: $styleBorder;
+                border-left: $styleBorder;
+                color: white;
+                border-radius: 7px;
+
+                &:focus {
+                    outline: none;                
+                }
+
+                &::-webkit-input-placeholder {
+                    color: greenyellow;
+                }
+
+                &:focus::-webkit-input-placeholder {
+                    color: greenyellow;
+                }
+            }
+        }
+
+        .submit {
+            padding-top: 30px;
+
+            input {
+                background-color: greenyellow;
+                font-size: 17px;
+                font-weight: bold;
+                width: 23%;
+                height: 50px;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .rightcontact {
+        width: 40%;
+
+        h2 {
+            text-align: center;
+            color: greenyellow;
+        }
+
+        p {
+            padding-top: 30px;
+            text-align: center;
+
+            i {
+                color: greenyellow;
+            }
+        }
+
+        .contactMethod {
+            padding-left: 20px;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+$logo: '../../assets/images/logo.jpeg';
+
+.containernavbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .leftnavbar {
+        width: 20%;
+        text-align: center;
+
+        .logo {
+            width: 100%;
+            height: auto;
+
+            .imgLogo {
+                width: 80%;
+            }
+        }
+    }
+
+    .centernavbar {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        margin-top: -10px;
+
+        .content {
+            width: auto;
+            font-size: 1.3em;
+            text-decoration: none;
+            color: white;
+            padding-left: 50px;
+        }
+
+        .active {
+            color: greenyellow;
+            font-size: 1.4em;
+        }
+    }
+
+    .rightnavbar {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: -10px;
+
+        .signin {
+            width: 50%;
+            text-decoration: none;
+            color: white;
+        }       
+        
+        .item{
+            background: greenyellow;
+        }
+    }
+}
+.signout{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    background: transparent;
+    border: none;
+    border-bottom: 5px solid greenyellow;
+}
+

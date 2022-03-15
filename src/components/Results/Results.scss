@@ -1,0 +1,75 @@
+$colorText: orange;
+
+.containerResults {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 50px;
+
+    .nameCate {
+        width: 100%;
+        color: $colorText;
+        font-weight: bold;
+        border-left: 3px solid $colorText;
+        height: auto;
+
+        .text {
+            padding-left: 10px;
+            font-size: 1.3em;
+            text-transform: uppercase;
+        }
+    }
+
+    .contentResults {
+        width: 100%;
+        padding-top: 10px;
+
+        .listResults {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start;
+
+            .textRS{
+                color: white;
+                font-size: 3em;
+                opacity: 0.3;
+            }
+                        
+
+            .film {
+                width: 19%;
+                height: auto;                
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                text-decoration: none;
+                padding-left: 10px;
+
+                p{
+                    color: greenyellow;
+                    font-size: 1em;                    
+
+                    font-weight: bold;
+
+                    text-align: center;
+                }
+
+                .imgListShow {
+                    min-width: 100%;
+                    max-width: 575px;
+                    max-height: 350px;
+                    min-height: 350px;
+                    width: 100%;
+                    padding-top: 14px;
+                    opacity: 0.8;                
+                }
+            }
+
+            
+        }
+    }
+}

@@ -1,0 +1,75 @@
+.containersearch {
+    width: 100%;
+    margin-top: -20px;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    flex-wrap: wrap;
+
+    form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .leftsearch {
+            width: 15.8%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            background-color: greenyellow;
+
+            .categorySearch {
+
+                width: 100%;
+
+                select {
+                    background: transparent;
+                    width: 100%;
+                    height: 30px;
+                    font-size: 1.2em;
+                    border: none;
+                    text-align: center;
+                    &:focus{
+                        outline: none;
+                    }
+                    option {
+                        background-color: greenyellow;
+                        width: 100%;
+                        font-size: 0.8em;
+                        border: none;
+                        
+                    }
+                }
+            }
+        }
+
+
+
+        .rightsearch {
+            width: 84%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            input[type=text] {
+                width: 94%;
+                color: black;
+                border: none;
+                background-color: greenyellow;
+                height: 28px;
+                font-size: 0.8em;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+
+            button {
+                width: 4%;
+                background-color: greenyellow;
+                height: 30px;
+                border: none;
+            }
+        }
+    }
+}

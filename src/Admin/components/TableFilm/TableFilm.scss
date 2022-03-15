@@ -1,0 +1,19 @@
+.containerTableFilm {
+    max-width: 100%;
+    min-height: 100%; 
+    
+    .nameAll{
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+    .imgPoster {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .fa-trash,.fa-edit{
+        cursor: pointer;
+    }
+
+}

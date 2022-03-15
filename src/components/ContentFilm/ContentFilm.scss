@@ -1,0 +1,27 @@
+.containerContent {
+    width: 100%;
+    padding-top: 30px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .noiDung {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .title{
+            font-size: 1.6em;
+            color: greenyellow;
+            flex: 1;
+            text-align: center;
+        }
+
+        .contentDetail{
+            font-size: 1.2em;
+        }
+    }
+}

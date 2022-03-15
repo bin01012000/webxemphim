@@ -1,0 +1,58 @@
+.containerfooter {
+    display: flex;
+    width: 100%;
+    padding-top: 70px;
+
+    .leftfooter {
+        width: 20%;
+
+        .imgLogo{
+            width: 100%;
+        }
+    }
+    
+    .rightfooter {
+        width: 80%;
+        display: flex;
+    
+        p, ul{
+            font-size: 1.3em;
+            color: greenyellow;
+            font-weight: bold;
+        }
+    
+        .category {
+            width: 30%;
+        
+            ul li{
+                list-style-type: none;            
+                padding-top: 10px; 
+                .cateFooter{
+                    color: white;
+                    text-decoration: none;                    
+                    font-size: 0.8em;
+                }               
+            }
+        }
+        
+        
+        .page {
+            width: 30%;
+        }
+        
+        .contact {
+            width: 30%;
+        }
+    }
+}
+
+.copyright{
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

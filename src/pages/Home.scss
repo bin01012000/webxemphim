@@ -1,0 +1,24 @@
+$bg: '../assets/images/background.jpg';
+
+.square{
+    background: url($bg) no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    margin: -8px;    
+}
+
+.leftHome{
+    width: 15%;
+}
+
+.centerHome{
+    width: 70%;
+}
+
+.rightHome{
+    width: 15%;
+}
+
+
+

@@ -1,0 +1,39 @@
+$bg: '../../assets/images/background.jpg';
+
+.squareAdmin {
+    background: url($bg) no-repeat;
+    background-size: cover;
+    margin: -8px;
+
+
+    .containHomeAdmin {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100vh;
+        height: 100%;
+
+
+        .leftHomeAdmin {
+            width: 12%;                                  
+            background : greenyellow;
+            min-height: 100vh;
+            height: 100%;
+            padding: 0;
+            z-index: 1;
+        }
+
+        .rightHomeAdmin {
+            width: 85%;
+            padding: 0 1%;   
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;   
+            z-index: 0;                              
+        }
+    }
+
+
+}

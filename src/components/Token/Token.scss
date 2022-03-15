@@ -1,0 +1,122 @@
+.containerToken {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 87.7vh;
+
+    .frameToken {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+
+        .formToken {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            [class*="entypo-"]:before {
+                font-family: 'entypo', sans-serif;
+            }
+
+            *,
+            *:before,
+            *:after {
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+
+            h2 {
+                color: greenyellow;
+                text-align: center;
+                width: 100%;
+                font-size: 40px;
+                margin-left: -50px;
+            }
+
+            p {
+                text-align: center;
+                width: 100%;
+                font-size: 1.3em;
+                .fa-envelope {
+                    font-size: 50px;
+                }
+                .goToMail{                    
+                    font-weight: bold;
+                    color: greenyellow;
+                    font-size: 1.4em;
+                }
+            }
+
+            body {
+                background: #272125;
+                font-family: 'Roboto', sans-serif;
+
+            }
+
+            form {
+                position: relative;
+                margin: 50px auto;
+                width: 380px;
+                height: auto;
+            }
+
+            input {
+                padding: 16px;
+                border-radius: 7px;
+                border: 0px;
+                background: rgba(255, 255, 255, .2);
+                display: block;
+                margin: 15px;
+                width: 300px;
+                color: white;
+                font-size: 18px;
+                height: 54px;
+
+                &:focus {
+                    outline-color: greenyellow;
+                    background: transparent;
+                    color: greenyellow;
+                }
+            }
+
+
+
+            button {                
+                height: 50px;
+                width: 100px;
+                border: 0px;
+                background: greenyellow;
+                border-radius: 7px;
+                
+                color: black;
+                font-size: 22px;
+            }
+
+
+            input::-webkit-input-placeholder {
+                color: greenyellow;
+            }
+
+            input:focus::-webkit-input-placeholder {
+                color: greenyellow;
+            }
+
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                margin: 0;
+            }
+        }
+    }
+
+}

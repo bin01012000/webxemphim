@@ -1,0 +1,27 @@
+.containerWelcome{
+    max-width: 100%;
+    min-height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    h1{
+        text-align: center;
+        width: 100%;
+        color: greenyellow;
+        text-transform: uppercase;
+    }
+
+    p{
+        width: 100%;
+        text-transform: uppercase;
+        color: greenyellow;
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    .imgAdmin{
+        width: 50%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,40 @@
+$colorText: orange;
+
+.containernamecate {
+    width: 100%;
+    display: inline-block;
+    padding-top: 50px;
+
+    .leftnamecate {
+        left: 0;
+        width: 50%;
+        float: left;
+        
+
+        .contentleft {
+            color: $colorText;
+            font-weight: bold;
+            border-left: 3px solid $colorText;
+            height: auto;            
+            display: inline;
+
+            .text{
+                padding-left: 10px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+
+
+    .rightnamecate {
+        right: 0;
+        width: 50%;
+        float: right;
+        .contentright {
+            float: right;
+            text-decoration: none;
+            color: greenyellow;
+        }
+    }
+}

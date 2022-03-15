@@ -1,0 +1,95 @@
+.containerReview {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+
+    .leftReview {
+        flex: 0.4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .imgReview {
+            width: 65%;
+            min-height: 450px;
+            max-height: 450px;
+        }
+    }
+
+    .centerReview {
+        flex: 0.1;
+    }
+
+    .rightReview {
+
+        flex: 0.5;
+
+        .title {
+            font-size: 1.8em;
+        }
+
+        .w-6{
+            width: 1em;
+        }
+
+        .star{
+            display: inline-block;
+            
+        }
+
+        .fa-tag{
+            color: greenyellow;
+        }
+
+        .flex{
+            display: flex;
+            align-items: center;
+        }
+
+        .cursor-pointer{
+            cursor: pointer;
+        }
+
+        .fa-tag{
+            padding-left: 20px;
+        }
+
+        .groupInfo{
+            padding-top: 60px;
+
+            .nameInfo{
+                color: greenyellow;
+            }
+    
+            .info{
+                color: white;
+            }
+        }
+
+        .playVideo{
+            width: 25%;
+            height: 10%;
+            font-size: 1em;
+            background-color: greenyellow;
+            border-radius: 10px;
+
+            i{
+                padding-left: 10px;
+            }
+        }
+
+        .addToFav{
+            width: 25%;
+            height: 10%;
+            font-size: 1em;
+            background-color: greenyellow;
+            border-radius: 10px;
+            
+            i{
+                padding-left: 10px;
+            }
+        }
+    }
+}
