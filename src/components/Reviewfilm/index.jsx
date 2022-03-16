@@ -95,7 +95,7 @@ const Reviewfilm = () => {
                                             )
                                         })}
                                     </div></div> <i className="fa fa-tag"></i> Phim {item.tenloai} </p><br /><br />
-                                <NavLink to={`/play/${item.maphim}`} className='playVideo'><button type='submit' className='playVideo'> Xem phim <i class='fas fa-play'></i></button></NavLink>&nbsp;&nbsp;&nbsp;
+                                <NavLink to={`/play/${item.maphim}`} className='playVideo'><button type='submit' className='playVideo'> Xem phim <i class='fa fa-play'></i></button></NavLink>&nbsp;&nbsp;&nbsp;
                                 <button type='submit' className='addToFav' onClick={addToFav}> Yêu thích <i class='fa fa-heart'></i></button>
                                 <div className='groupInfo'>
                                     <p className='nameInfo'> Thời lượng : <span className='info'>{item.thoiluong} phút</span> </p>
