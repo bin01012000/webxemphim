@@ -13,19 +13,20 @@ export default function FormEditCate() {
     const [tenloai,setTenLoai] = useState('');
 
     useEffect(() => {
-        getCate();
-    }, [])
-
-    const getCate = async () => {
-        const res = await axios.get(`http://localhost:5000/category?maloai=${id}`);
-        if (res.status === 200) {
-            console.log(res.data);
-            setData(res.data);
+        const getCate = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/category?maloai=${id}`);
+            if (res.status === 200) {
+                console.log(res.data);
+                setData(res.data);
+            }
         }
-    }
+        getCate();
+    }, [id])
+
+    
 
     const updateCate = async() =>{
-        const res = await axios.post(`http://localhost:5000/updatecate?maloai=${id}&tenloai=${tenloai}`);
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/updatecate?maloai=${id}&tenloai=${tenloai}`);
         if (res.status === 200) {
             console.log(res.data);
             toast.success(' Cập nhật thành công ', { position: toast.POSITION.TOP_CENTER })

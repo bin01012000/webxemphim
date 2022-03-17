@@ -20,13 +20,13 @@ export default function LeftAdmin() {
             <div id="mainnav">
                 <ul>
                     <li> Phim
-                        <ul class="sub-menu">
+                        <ul className="sub-menu">
                             <NavLink to='/listfilmadmin' className='liLink'> <li> Danh sách </li></NavLink>
                             <NavLink to='/themphimadmin' className='liLink'> <li> Thêm </li></NavLink> 
                         </ul>
                     </li>
                     <li> Thể loại phim
-                        <ul class="sub-menu">
+                        <ul className="sub-menu">
                              <NavLink to='/listcateadmin' className='liLink'> <li> Danh sách </li></NavLink> 
                              <NavLink to='/themcateadmin' className='liLink'> <li> Thêm </li></NavLink> 
                         </ul>

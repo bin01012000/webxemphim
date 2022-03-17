@@ -33,7 +33,7 @@ const FavoFilm = (props) => {
                 {
                     label: 'Có',
                     onClick: () => {
-                        const res = axios.post(`http://localhost:5000/deletefav?taikhoan=${acc}&maphim=${id}`);
+                        const res = axios.post(`${process.env.REACT_APP_API_URL}/deletefav?taikhoan=${acc}&maphim=${id}`);
                         if (res.status === 200) {
                             console.log(res.data);
 

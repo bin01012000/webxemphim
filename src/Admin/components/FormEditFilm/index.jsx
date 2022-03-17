@@ -23,35 +23,36 @@ export default function FormEditFilm() {
     const { id } = useParams();
 
     useEffect(() => {
+        const getAllCategory = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/allcategory?`);
+            if (res.status === 200) {
+                console.log(res.data);
+                setData(res.data);
+            }
+        };
+    
+        const getFilm = async () => {
+            const r = await axios.get(`${process.env.REACT_APP_API_URL}/film?maphim=${id}`);
+            if (r.status === 200) {
+                console.log(r.data);
+                setDataFilm(r.data);
+                setTenPhim(r.data[0].tenphim);
+                setThoiLuong(r.data[0].thoiluong);
+                setDaoDien(r.data[0].daodien);
+                setDienVien(r.data[0].dienvien);
+                setTap(r.data[0].tap);
+                setMoTa(r.data[0].mota);
+                setMaLoai(r.data[0].maloai);
+                setRating(r.data[0].rating);
+                setPoster(r.data[0].poster);
+                setVideo(r.data[0].video);
+            }
+        }
         getAllCategory();
         getFilm();
-    }, []);
+    }, [id]);
 
-    const getAllCategory = async () => {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/allcategory?`);
-        if (res.status === 200) {
-            console.log(res.data);
-            setData(res.data);
-        }
-    };
-
-    const getFilm = async () => {
-        const r = await axios.get(`${process.env.REACT_APP_API_URL}/film?maphim=${id}`);
-        if (r.status === 200) {
-            console.log(r.data);
-            setDataFilm(r.data);
-            setTenPhim(r.data[0].tenphim);
-            setThoiLuong(r.data[0].thoiluong);
-            setDaoDien(r.data[0].daodien);
-            setDienVien(r.data[0].dienvien);
-            setTap(r.data[0].tap);
-            setMoTa(r.data[0].mota);
-            setMaLoai(r.data[0].maloai);
-            setRating(r.data[0].rating);
-            setPoster(r.data[0].poster);
-            setVideo(r.data[0].video);
-        }
-    }
+    
 
     const takeMaLoai = (e) => {
         setMaLoai(e.target.value);

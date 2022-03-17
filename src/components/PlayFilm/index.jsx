@@ -12,17 +12,18 @@ const PlayFilm = () => {
     const [data, setData] = useState([]);
     const [content, setContent] = useState('');
     useEffect(() => {
-        getFilm();
-    })
-
-    const getFilm = async () => {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/filmcate?maphim=${id}`);
-        if (res.status === 200) {
-            console.log(res.data);
-            setData(res.data);
-            setContent(data[0].mota);
+        const getFilm = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/filmcate?maphim=${id}`);
+            if (res.status === 200) {
+                console.log(res.data);
+                setData(res.data);
+                setContent(data[0].mota);
+            }
         }
-    }
+        getFilm();
+    },[data, id])
+
+    
 
     return (
         <>

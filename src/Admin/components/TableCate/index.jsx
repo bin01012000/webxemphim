@@ -61,7 +61,7 @@ export default function TableCate() {
                 {
                     label: 'Có',
                     onClick: () => {
-                        const res = axios.post(`http://localhost:5000/deletecate?maloai=${id}`);
+                        const res = axios.post(`${process.env.REACT_APP_API_URL}/deletecate?maloai=${id}`);
                         if (res.status === 200) {
                             console.log(res.data);
                         }

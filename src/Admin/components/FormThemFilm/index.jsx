@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react'
 import "./FormThemFilm.scss"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import FormData from "form-data";
 
 export default function FormThemFilm() {
     toast.configure();
-    const [data, setData] = useState([]);    
+    const [data, setData] = useState([]);
 
     const [maphim, setMaPhim] = useState('');
     const [tenphim, setTenPhim] = useState('');
@@ -29,6 +30,7 @@ export default function FormThemFilm() {
         if (res.status === 200) {
             console.log(res.data);
             setData(res.data);
+            setMaLoai(res.data[0].maloai);
         }
     };
 
@@ -46,6 +48,7 @@ export default function FormThemFilm() {
             const res = await axios.post(`${process.env.REACT_APP_API_URL}/upload?maphim=${maphim}&tenphim=${tenphim}&thoiluong=${thoiluong}&daodien=${daodien}&dienvien=${dienvien}&tap=${tap}&mota=${mota}&poster=${poster}&rating=${rating}&video=${video}&maloai=${maloai}`, d);
             if (res.status === 200) {
                 toast.success(' Thêm thành công ', { position: toast.POSITION.TOP_CENTER });
+                console.log(res);
                 setTimeout(() => {
                     window.location.href = '/listfilmadmin';
                 }, 1000)
@@ -108,8 +111,8 @@ export default function FormThemFilm() {
                         <br /><br /><br />
                         <br /><br /><br />
                         <div className="inputFile">
-                            <label for="imgUpload_1" class="custom-file-2">
-                                <i class="fas fa-cloud-upload-alt"></i>
+                            <label htmlFor="imgUpload_1" className="custom-file-2">
+                                <i className="fa fa-cloud-upload-alt"></i>
                             </label>
                             <span id="filesel_2"> {!poster ? 'Choose a image...' : poster.name}  </span>
                             <input type="file" id="imgUpload_1" onChange={(e) => { setPoster(e.target.files[0]) }} />
@@ -117,8 +120,8 @@ export default function FormThemFilm() {
                         <br /><br /><br />
                         <br /><br /><br />
                         <div className="inputFile">
-                            <label for="imgUpload_2" class="custom-file-2">
-                                <i class="fas fa-cloud-upload-alt"></i>
+                            <label htmlFor="imgUpload_2" className="custom-file-2">
+                                <i className="fa fa-cloud-upload-alt"></i>
                             </label>
                             <span id="filesel_2"> {!video ? 'Choose a video...' : video.name} </span>
                             <input type="file" id="imgUpload_2" onChange={(e) => { setVideo(e.target.files[0]) }} />

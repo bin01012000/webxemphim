@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import './Reviewfilm.scss'
 import RatingIcon from '../StarRating/RatingIcon'
 import { NavLink, useParams } from 'react-router-dom'
@@ -20,18 +19,19 @@ const Reviewfilm = () => {
     
 
     useEffect(() => {
-        getFilm();
-    },[data, getFilm])
-
-    async function getFilm() {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/filmcate?maphim=${id}`);
-        if (res.status === 200) {
-            console.log(res.data);
-            setData(res.data);
-            setRating(res.data[0].rating);
-            setContent(res.data[0].mota);
+        async function getFilm() {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/filmcate?maphim=${id}`);
+            if (res.status === 200) {
+                console.log(res.data);
+                setData(res.data);
+                setRating(res.data[0].rating);
+                setContent(res.data[0].mota);
+            }
         }
-    }
+        getFilm();
+    },[id])
+
+    
     const [hoverRating, setHoverRating] = React.useState(0);
     const onMouseEnter = (index) => {
         setHoverRating(index);
@@ -73,7 +73,7 @@ const Reviewfilm = () => {
 
                 {data && data.map((item, id) => {
                     return (
-                        <>
+                        <Fragment key={id}>
                             <div className='leftReview'>
                                 <img src={item.poster} alt="" className='imgReview' />
                                 <p>{item.mota.slice(0,150) + `...`}</p>
@@ -105,7 +105,7 @@ const Reviewfilm = () => {
                                     <p className='nameInfo'> Diễn viên : <span className='info'>{item.dienvien}</span> </p>
                                 </div>
                             </div>
-                        </>
+                        </Fragment>
                     );
                 })}
             </div>

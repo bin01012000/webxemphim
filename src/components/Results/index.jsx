@@ -9,27 +9,26 @@ export default function Results() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        getRSSearch();
-        console.log(id);
-        console.log(data + 'aa');
-    }, [])
-
-    const getRSSearch = async () => {
-        if (!id) {
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/search?kw=${kw}&maloai=`);
-            if (res.status === 200) {
-                console.log(res.data);
-                setData(res.data);
-            }
-            
-        }else{
-            const res = await axios.get(`${process.env.REACT_APP_API_URL}/search?kw=${kw}&maloai=${id}`);
-            if (res.status === 200) {
-                console.log(res.data);
-                setData(res.data);
+        const getRSSearch = async () => {
+            if (!id) {
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/search?kw=${kw}&maloai=`);
+                if (res.status === 200) {
+                    console.log(res.data);
+                    setData(res.data);
+                }
+                
+            }else{
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/search?kw=${kw}&maloai=${id}`);
+                if (res.status === 200) {
+                    console.log(res.data);
+                    setData(res.data);
+                }
             }
         }
-    }
+        getRSSearch();
+    }, [id, kw])
+
+    
 
     return (
         <div className='containerResults'>

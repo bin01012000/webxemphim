@@ -38,7 +38,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/favfilm" element={localStorage.getItem('User') ? <FavFilm /> : <SignIn requestSign='true'/>}></Route> 
         <Route path="/token" element={<TokenConfirm />}></Route>
-        <Route path="/admin" element={<LoginAdmin />}></Route>
+        <Route path="/admin" element={localStorage.getItem('Admin') ? <HomeAdmin /> : <LoginAdmin />}></Route>
         <Route path="/homeadmin" element={localStorage.getItem('Admin') ? <HomeAdmin /> : <LoginAdmin requestSign='true'/>}></Route>
         <Route path="/listfilmadmin" element={localStorage.getItem('Admin') ? <ListFilmAdmin /> : <LoginAdmin requestSign='true'/>}></Route>
         <Route path="/listcateadmin" element={localStorage.getItem('Admin') ? <ListCateAdmin /> : <LoginAdmin requestSign='true'/>}></Route>

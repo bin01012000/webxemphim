@@ -10,16 +10,17 @@ const Listfilmshow = (props) => {
 
 
     useEffect(() => {
-        getAllFilm();
-    },[]);
-
-    const getAllFilm = async () => {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/filmbycategory10?maloai=${props.id}`);
-        if (res.status === 200) {
-            console.log(res.data);
-            setData(res.data);
+        const getAllFilm = async () => {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/filmbycategory10?maloai=${props.id}`);
+            if (res.status === 200) {
+                console.log(res.data);
+                setData(res.data);
+            }
         }
-    }
+        getAllFilm();
+    },[props.id]);
+
+    
 
 
 

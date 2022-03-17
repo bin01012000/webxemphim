@@ -30,7 +30,7 @@ const Search = (props) => {
                 <div className='leftsearch'>
                     <div className='categorySearch'>
                         <select defaultValue='0' onChange={takeMaLoai}>
-                            <option> Tất cả phim </option>
+                            <option value=''> Tất cả phim </option>
                             {props.data && props.data.map((item, id) => {
                                 return (
                                     <option key={id} value={item.maloai}> {item.tenloai} </option>

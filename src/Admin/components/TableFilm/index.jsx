@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import './TableFilm.scss'
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -87,7 +87,7 @@ export default function TableFilm() {
         setPage(0);
     };
 
-    const deleteFilm = (id) =>{
+    const deleteFilm = (id) => {
         confirmAlert({
             title: 'Xóa',
             message: 'Bạn có muốn xóa phim này không ?',
@@ -95,7 +95,7 @@ export default function TableFilm() {
                 {
                     label: 'Có',
                     onClick: () => {
-                        const res = axios.post(`http://localhost:5000/deletefilm?maphim=${id}`);
+                        const res = axios.post(`${process.env.REACT_APP_API_URL}/deletefilm?maphim=${id}`);
                         if (res.status === 200) {
                             console.log(res.data);
 
@@ -125,9 +125,9 @@ export default function TableFilm() {
                                 </TableCell>
                             </TableRow>
                             <TableRow>
-                                {columns.map((column) => (
+                                {columns.map((column,id) => (
                                     <TableCell
-                                        key={column.id}
+                                        key={id}
                                         align={column.align}
                                         style={{ top: 57, minWidth: column.minWidth }}
                                     >
@@ -142,9 +142,9 @@ export default function TableFilm() {
                                 .map((item, id) => {
                                     return (
                                         <TableRow hover role="checkbox" tabIndex={-1}>
-                                            {columns.map((column) => {
+                                            {columns.map((column,id) => {
                                                 const value = item[column.id];
-                                                return (
+                                                return (<Fragment key={id}>{
                                                     !(column.id === 'poster') ? (
                                                         !(column.id === 'edit') ? (
                                                             !(column.id === 'delete') ? <TableCell key={column.id} align={column.align}>
@@ -152,12 +152,13 @@ export default function TableFilm() {
                                                                     ? column.format(value)
                                                                     : value}
                                                             </TableCell> : <TableCell key={column.id} align={column.align}>
-                                                            <i onClick={()=>deleteFilm(item.maphim)} class="fa fa-trash"></i>
+                                                                <i onClick={() => deleteFilm(item.maphim)} class="fa fa-trash"></i>
                                                             </TableCell>) : <TableCell key={column.id} align={column.align}>
                                                             <NavLink to={`/editfilmadmin/${item.maphim}`}><i class="fa fa-edit"></i></NavLink>
                                                         </TableCell>) : <TableCell key={column.id} align={column.align}>
                                                         <img src={item.poster} alt={item.tenphim} className='imgPoster' />
-                                                    </TableCell>
+                                                    </TableCell>}
+                                                </Fragment>
                                                 );
                                             })}
                                         </TableRow>
