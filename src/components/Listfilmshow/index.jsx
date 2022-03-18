@@ -32,7 +32,7 @@ const Listfilmshow = (props) => {
                     {data && data.map((item, id) => {
                         return (
                             <NavLink key={id} to={`/detail/${item.maphim}`} className='film'>                                
-                                <img src={item.poster} alt={item.tenphim} className='imgListShow' loading='lazy'/>
+                                <img src={item.poster} alt={item.tenphim} className='imgListShow'/>
                                 <p>{item.tenphim}</p>
                             </NavLink>
                         );
