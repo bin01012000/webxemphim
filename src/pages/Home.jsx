@@ -19,7 +19,7 @@ function Home(props) {
     }, [])
 
     const getAllCate = async () => {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/allcategory`);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/allcategory`); //Tất cả danh mục
         if (res.status === 200) {
             console.log(res.data);
             setData(res.data);
@@ -27,7 +27,7 @@ function Home(props) {
     }
 
     const getRandFilm = async () => {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/randfilm`);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/randfilm`); //Random
         if (res.status === 200) {
             console.log(res.data);
             setDataSlide(res.data);            
